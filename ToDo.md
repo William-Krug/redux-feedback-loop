@@ -2,9 +2,20 @@
 
 ## Base Mode
 
-- [ ] set up Redux store
-  - [ ] reducers
-  - [ ] provider
+- [x] set up Redux store
+  - [x] Run `npm install redux react-redux` from the terminal
+  - [x] Run `npm install redux-logger` from the terminal
+  - [x] `import { createStore, combineReducers, applyMiddleware } from 'redux'`
+  - [x] `import { Provider } from 'react-redux'`
+  - [x] `import logger from 'redux-logger'`
+  - [x] `const store = createStore(combineReducers({reducer1, reducer2, ...}),applyMiddleware(logger));`
+  - [x] `ReactDOM.render(<React.StrictMode><Provider store={store}><App /></Provider></React.StrictMode>,document.getElementByID('root'));`
+  - [x] reducers
+  - [x] provider
+- [ ] set up Router
+  - [ ] `npm install react-router-dom`
+  - [ ] set up Router
+  - [ ] set up Router
 - [ ] How are you feeling today?
   - [ ] `input type="number" />`
   - [ ] `<button>`
