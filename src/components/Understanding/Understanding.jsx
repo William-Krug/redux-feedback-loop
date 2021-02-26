@@ -6,6 +6,13 @@ import { useHistory } from 'react-router-dom';
 /* Import CSS */
 import './Understanding.css';
 
+/**
+ * Function prompts the survey taker about their understanding
+ * of course material and stores their responses in the
+ * surveyResponses reducer in the Redux store
+ *
+ * @param {boolean} verbose if `true` console logs are displayed for testing and debugging
+ */
 function Understanding({ verbose }) {
   const dispatch = useDispatch();
   const history = useHistory();
@@ -44,14 +51,17 @@ function Understanding({ verbose }) {
 
   return (
     <div className="question">
+      {/* Survey Question */}
       <h2>How well are you understanding the content?</h2>
       <form onSubmit={recordUnderstanding}>
+        {/* Question Description */}
         <div className="left-align">
           <p>Enter a number from 1 to 5</p>
           <p>1 = I'm completely lost</p>
           <p>5 = I could teach this stuff</p>
         </div>
         <div className="left-align">
+          {/* User Response */}
           <input
             type="number"
             value={understanding}

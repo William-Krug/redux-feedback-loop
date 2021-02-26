@@ -6,6 +6,13 @@ import { useHistory } from 'react-router-dom';
 /* Import CSS */
 import './Feelings.css';
 
+/**
+ * Function prompts the survey taker about how they are feeling
+ * and stores their responses in the surveyResponses reducer
+ * in the Redux store
+ *
+ * @param {boolean} verbose if `true` console logs are displayed for testing and debugging
+ */
 function Feelings({ verbose }) {
   const dispatch = useDispatch();
   const history = useHistory();
@@ -44,14 +51,17 @@ function Feelings({ verbose }) {
 
   return (
     <div className="question">
+      {/* Survey Question */}
       <h2>How are you feeling today?</h2>
       <form onSubmit={recordFeelings}>
+        {/* Question Description */}
         <div className="left-align">
           <p>Enter a number from 1 to 5</p>
           <p>1 = I'm feeling horrible</p>
           <p>5 = I'm fantastic</p>
         </div>
         <div className="left-align">
+          {/* User Response */}
           <input
             type="number"
             value={feelings}
