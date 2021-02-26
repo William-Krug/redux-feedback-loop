@@ -11,10 +11,16 @@ import App from './components/App/App';
 import registerServiceWorker from './registerServiceWorker';
 
 /* Reducers */
-const surveyResponses = (state = [], action) => {
+const surveyResponses = (state = {}, action) => {
   switch (action.type) {
     case 'ADD_FEELINGS':
-      return [...state, action.payload];
+      return;
+    case 'ADD_UNDERSTANDING':
+      return;
+    case 'ADD_SUPPORTED':
+      return;
+    case 'ADD_COMMENTS':
+      return;
     default:
       return state;
   }
