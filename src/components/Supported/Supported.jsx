@@ -39,7 +39,7 @@ function Supported({ verbose }) {
     setSupported(0);
 
     // Navigate to next question
-    history.push('/question4');
+    history.push('/comments');
   };
 
   return (
