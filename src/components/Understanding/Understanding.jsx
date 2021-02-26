@@ -44,8 +44,8 @@ function Understanding({ verbose }) {
 
   return (
     <div className="question">
+      <h2>How well are you understanding the content?</h2>
       <form onSubmit={recordUnderstanding}>
-        <h2>How well are you understanding the content?</h2>
         <div className="left-align">
           <p>Enter a number from 1 to 5</p>
           <p>1 = I'm completely lost</p>

@@ -39,21 +39,16 @@ function Comments({ verbose }) {
 
   return (
     <div className="question">
+      <h2>Any comments you want to leave?</h2>
       <form onSubmit={recordComments}>
-        <h2>How well are you being supported?</h2>
         <div className="left-align">
-          <p>Enter a number from 1 to 5</p>
-          <p>1 = I feel totally alone</p>
-          <p>5 = I know the instructors got my back</p>
+          <p>Comments</p>
         </div>
         <div className="left-align">
           <input
-            type="number"
+            type="text"
             value={comments}
             onChange={(event) => setComments(event.target.value)}
-            min="1"
-            max="5"
-            required
           />
           <button type="submit">NEXT</button>
         </div>

@@ -44,8 +44,8 @@ function Supported({ verbose }) {
 
   return (
     <div className="question">
+      <h2>How well are you being supported?</h2>
       <form onSubmit={recordSupported}>
-        <h2>How well are you being supported?</h2>
         <div className="left-align">
           <p>Enter a number from 1 to 5</p>
           <p>1 = I feel totally alone</p>

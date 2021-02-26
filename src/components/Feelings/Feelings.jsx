@@ -39,13 +39,13 @@ function Feelings({ verbose }) {
     setFeelings(0);
 
     // Navigate to next question
-    history.push('/question2');
+    history.push('/understanding');
   };
 
   return (
     <div className="question">
+      <h2>How are you feeling today?</h2>
       <form onSubmit={recordFeelings}>
-        <h2>How are you feeling today?</h2>
         <div className="left-align">
           <p>Enter a number from 1 to 5</p>
           <p>1 = I'm feeling horrible</p>
