@@ -12,6 +12,7 @@ import {
 /* Import CSS and Components */
 import './App.css';
 import Feelings from '../Feelings/Feelings';
+import Understanding from '../Understanding/Understanding';
 
 const verbose = true;
 
@@ -26,7 +27,9 @@ function App() {
         <Route exact path="/">
           <Feelings verbose={verbose} />
         </Route>
-        <Route></Route>
+        <Route exact path="/question2">
+          <Understanding verbose={verbose} />
+        </Route>
         <Route></Route>
         <Route></Route>
         <Route></Route>
