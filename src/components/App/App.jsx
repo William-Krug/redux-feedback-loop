@@ -13,6 +13,9 @@ import {
 import './App.css';
 import Feelings from '../Feelings/Feelings';
 import Understanding from '../Understanding/Understanding';
+import Supported from '../Supported/Supported';
+import Comments from '../Comments/Comments';
+import Review from '../Review/Review';
 
 const verbose = true;
 
@@ -27,12 +30,18 @@ function App() {
         <Route exact path="/">
           <Feelings verbose={verbose} />
         </Route>
-        <Route exact path="/question2">
+        <Route exact path="/understanding">
           <Understanding verbose={verbose} />
         </Route>
-        <Route></Route>
-        <Route></Route>
-        <Route></Route>
+        <Route exact path="/supported">
+          <Supported verbose={verbose} />
+        </Route>
+        <Route exact path="/comments">
+          <Comments verbose={verbose} />
+        </Route>
+        <Route exact path="/review">
+          <Review verbose={verbose} />
+        </Route>
         <Route></Route>
         <Route></Route>
       </Router>

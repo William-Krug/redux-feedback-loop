@@ -4,58 +4,53 @@ import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 /* Import CSS */
-import './Understanding.css';
+import './Comments.css';
 
-function Understanding({ verbose }) {
+function Comments({ verbose }) {
   const dispatch = useDispatch();
   const history = useHistory();
 
   /* Declare state variables */
-  const [understanding, setUnderstanding] = useState(0);
+  const [comments, setComments] = useState('');
 
   /* Helper functions */
-  const recordUnderstanding = (event) => {
+  const recordComments = (event) => {
     // Keep page from reloading
     event.preventDefault();
 
-    // Form validation
-    if (understanding === 0 || understanding === undefined) {
-      alert('*** Please enter a number between 1 and 5 and try again. ***');
-    }
-
     // Breadcrumbs for testing and debugging
     if (verbose) {
-      console.log('*** in recordUnderstanding() ***');
-      console.log('\tunderstanding:', understanding);
+      console.log('*** in recordComments() ***');
+      console.log('\tcomments:', comments);
     }
 
     // Save value in the Redux store
     dispatch({
-      type: 'ADD_UNDERSTANDING',
-      payload: understanding,
+      type: 'ADD_COMMENTS',
+      payload: comments,
     });
 
     // Clear input
-    setUnderstanding(0);
+    setComments('');
 
     // Navigate to next question
-    history.push('/question3');
+    history.push('/review');
   };
 
   return (
     <div className="question">
-      <form onSubmit={recordUnderstanding}>
-        <h2>How well are you understanding the content?</h2>
+      <form onSubmit={recordComments}>
+        <h2>How well are you being supported?</h2>
         <div className="left-align">
           <p>Enter a number from 1 to 5</p>
-          <p>1 = I'm completely lost</p>
-          <p>5 = I could teach this stuff</p>
+          <p>1 = I feel totally alone</p>
+          <p>5 = I know the instructors got my back</p>
         </div>
         <div className="left-align">
           <input
             type="number"
-            value={understanding}
-            onChange={(event) => setUnderstanding(event.target.value)}
+            value={comments}
+            onChange={(event) => setComments(event.target.value)}
             min="1"
             max="5"
             required
@@ -67,4 +62,4 @@ function Understanding({ verbose }) {
   );
 }
 
-export default Understanding;
+export default Comments;
