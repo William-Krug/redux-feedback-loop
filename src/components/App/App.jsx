@@ -11,6 +11,10 @@ import {
 
 /* Import CSS and Components */
 import './App.css';
+import Feelings from '../Feelings/Feelings';
+import Understanding from '../Understanding/Understanding';
+
+const verbose = true;
 
 function App() {
   return (
@@ -20,8 +24,12 @@ function App() {
         <h4>Don't forget it!</h4>
       </header>
       <Router>
-        <Route></Route>
-        <Route></Route>
+        <Route exact path="/">
+          <Feelings verbose={verbose} />
+        </Route>
+        <Route exact path="/question2">
+          <Understanding verbose={verbose} />
+        </Route>
         <Route></Route>
         <Route></Route>
         <Route></Route>

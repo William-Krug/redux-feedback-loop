@@ -12,16 +12,16 @@
   - [x] `ReactDOM.render(<React.StrictMode><Provider store={store}><App /></Provider></React.StrictMode>,document.getElementByID('root'));`
   - [x] reducers
   - [x] provider
-- [ ] set up Router
-  - [ ] `npm install react-router-dom`
-  - [ ] set up Router
-  - [ ] set up Router
+- [x] set up Router
+  - [x] `npm install react-router-dom`
+  - [x] set up Router
+  - [x] set up Router
 - [ ] How are you feeling today?
-  - [ ] `input type="number" />`
+  - [x] `input type="number" />`
   - [ ] `<button>`
-  - [ ] form validation
-    - [ ] HTML
-    - [ ] client check
+  - [x] form validation
+    - [x] HTML
+    - [x] client check
 - [ ] How well are you understanding the content?
   - [ ] `input type="number" />`
   - [ ] `<button>`

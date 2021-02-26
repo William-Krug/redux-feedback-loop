@@ -11,6 +11,14 @@ import App from './components/App/App';
 import registerServiceWorker from './registerServiceWorker';
 
 /* Reducers */
+const surveyResponses = (state = [], action) => {
+  switch (action.type) {
+    case 'ADD_FEELINGS':
+      return [...state, action.payload];
+    default:
+      return state;
+  }
+};
 
 /* Redux Store */
 const store = createStore(combineReducers({}), applyMiddleware(logger));
