@@ -1,13 +1,6 @@
 /* Import Libraries */
 import React from 'react';
-import { useEffect } from 'react';
-import axios from 'axios';
-import {
-  HashRouter as Router,
-  Route,
-  Link,
-  useHistory,
-} from 'react-router-dom';
+import { HashRouter as Router, Route } from 'react-router-dom';
 
 /* Import CSS and Components */
 import './App.css';
