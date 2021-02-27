@@ -38,15 +38,15 @@
   - [x] `input type="text" />`
   - [x] `<button>`
 - [x] Create routes for each page of the form
-- [ ] Review Component
+- [x] Review Component
   - [x] collects all data for review
   - [x] `<button>Submit</button>`
     - [x] submits feedback
     - [x] saves data to db
-    - [ ] submission success page
-      - [ ] button to restart process
+    - [x] submission success page
+      - [x] button to restart process
         - [x] resets all the data
-        - [ ] navigates back to first page of survey
+        - [x] navigates back to first page of survey
 
 ## Stretch Goals
 
