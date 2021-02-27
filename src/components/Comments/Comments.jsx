@@ -6,6 +6,13 @@ import { useHistory } from 'react-router-dom';
 /* Import CSS */
 import './Comments.css';
 
+/**
+ * Function prompts the survey to leave any additional
+ * comments and stores their responses in the surveyResponses
+ * reducer in the Redux store
+ *
+ * @param {boolean} verbose if `true` console logs are displayed for testing and debugging
+ */
 function Comments({ verbose }) {
   const dispatch = useDispatch();
   const history = useHistory();
@@ -39,21 +46,18 @@ function Comments({ verbose }) {
 
   return (
     <div className="question">
+      {/* Survey Question */}
+      <h2>Any comments you want to leave?</h2>
       <form onSubmit={recordComments}>
-        <h2>How well are you being supported?</h2>
         <div className="left-align">
-          <p>Enter a number from 1 to 5</p>
-          <p>1 = I feel totally alone</p>
-          <p>5 = I know the instructors got my back</p>
+          <p>Comments</p>
         </div>
         <div className="left-align">
+          {/* User Response */}
           <input
-            type="number"
+            type="text"
             value={comments}
             onChange={(event) => setComments(event.target.value)}
-            min="1"
-            max="5"
-            required
           />
           <button type="submit">NEXT</button>
         </div>

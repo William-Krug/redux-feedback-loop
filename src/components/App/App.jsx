@@ -1,13 +1,6 @@
 /* Import Libraries */
 import React from 'react';
-import { useEffect } from 'react';
-import axios from 'axios';
-import {
-  HashRouter as Router,
-  Route,
-  Link,
-  useHistory,
-} from 'react-router-dom';
+import { HashRouter as Router, Route } from 'react-router-dom';
 
 /* Import CSS and Components */
 import './App.css';
@@ -16,6 +9,7 @@ import Understanding from '../Understanding/Understanding';
 import Supported from '../Supported/Supported';
 import Comments from '../Comments/Comments';
 import Review from '../Review/Review';
+import SubmissionConfirmation from '../SubmissionConfirmation/SubmissionConfirmation';
 
 const verbose = true;
 
@@ -42,7 +36,9 @@ function App() {
         <Route exact path="/review">
           <Review verbose={verbose} />
         </Route>
-        <Route></Route>
+        <Route exact path="/submissionConfirmation">
+          <SubmissionConfirmation verbose={verbose} />
+        </Route>
         <Route></Route>
       </Router>
     </div>

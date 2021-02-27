@@ -1,0 +1,11 @@
+.survey-review {
+  display: inline-block;
+  width: 50%;
+  border: 1px solid #bec2cb;
+  border-radius: 15px;
+}
+
+.response-table {
+  display: inline-block;
+  width: 50%;
+}
