@@ -1,11 +1,35 @@
 .survey-review {
   display: inline-block;
-  width: 50%;
+  /* width: 50%; */
   border: 1px solid #bec2cb;
   border-radius: 15px;
+  padding: 50px 100px;
 }
 
-.response-table {
-  display: inline-block;
-  width: 50%;
+th,
+td {
+  font-size: 24px;
+}
+
+.review-question {
+  text-align: right;
+}
+
+.review-question td {
+  padding-right: 100px;
+}
+
+td.review-question {
+  padding: 10px 25px;
+}
+.response {
+  text-align: left;
+}
+
+td.response {
+  padding: 10px 25px;
+}
+
+.survey-review button {
+  font-size: 18px;
 }

@@ -11,8 +11,13 @@ import App from './components/App/App';
 import registerServiceWorker from './registerServiceWorker';
 
 /* Reducers */
-// Collects survey responses as attributes in an object
-// so that all responses are collectively held per survey taker
+/**
+ * Reducer collects survey responses as attributes in an object
+ * so that all responses are collectively held per survey taker
+ *
+ * @param {object} state the variable stored in the Redux store
+ * @param {*} action tells the function what to do and what data to add to the state
+ */
 const surveyResponses = (state = {}, action) => {
   switch (action.type) {
     case 'ADD_FEELINGS':
@@ -48,6 +53,7 @@ const store = createStore(
   applyMiddleware(logger)
 );
 
+/* Allow the App component access to the store */
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>

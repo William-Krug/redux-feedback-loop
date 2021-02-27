@@ -13,29 +13,46 @@ import SubmissionConfirmation from '../SubmissionConfirmation/SubmissionConfirma
 
 const verbose = true;
 
+/**
+ * Function is the main page of the app with routes to switch pages
+ * so that pages can be loaded from cache and not have to come from the server
+ */
 function App() {
   return (
     <div className="App">
+      {/* Header -> Present on all pages */}
       <header className="App-header">
         <h1 className="App-title">Feedback!</h1>
         <h4>Don't forget it!</h4>
       </header>
+
       <Router>
+        {/* Start of feedback (Feelings Question) */}
         <Route exact path="/">
           <Feelings verbose={verbose} />
         </Route>
+
+        {/* Understanding Question */}
         <Route exact path="/understanding">
           <Understanding verbose={verbose} />
         </Route>
+
+        {/* Supported Question */}
         <Route exact path="/supported">
           <Supported verbose={verbose} />
         </Route>
+
+        {/* Comments Question */}
         <Route exact path="/comments">
           <Comments verbose={verbose} />
         </Route>
+
+        {/* Review Responses */}
         <Route exact path="/review">
           <Review verbose={verbose} />
         </Route>
+
+        {/* Confirm Submission */}
         <Route exact path="/submissionConfirmation">
           <SubmissionConfirmation verbose={verbose} />
         </Route>

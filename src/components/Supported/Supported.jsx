@@ -17,7 +17,8 @@ function Supported({ verbose }) {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  /* Declare state variables */
+  /* Declare state variables
+     so that DOM updates/renders as user takes survey */
   const [supported, setSupported] = useState(0);
 
   /* Helper functions */
@@ -25,7 +26,7 @@ function Supported({ verbose }) {
     // Keep page from reloading
     event.preventDefault();
 
-    // Form validation
+    // Form validation (client side)
     if (supported === 0 || supported === undefined) {
       alert('*** Please enter a number between 1 and 5 and try again. ***');
     }
