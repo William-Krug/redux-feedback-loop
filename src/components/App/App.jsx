@@ -36,7 +36,9 @@ function App() {
         <Route exact path="/review">
           <Review verbose={verbose} />
         </Route>
-        <Route exact path="/submissionConfirmation"></Route>
+        <Route exact path="/submissionConfirmation">
+          <SubmissionConfirmation verbose={verbose} />
+        </Route>
         <Route></Route>
       </Router>
     </div>

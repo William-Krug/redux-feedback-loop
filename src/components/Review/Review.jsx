@@ -1,11 +1,11 @@
 /* Import Libraries */
 import { useSelector, useDispatch } from 'react-redux';
-import { axios } from 'react';
 import { useHistory } from 'react-router-dom';
 
 function Review({ verbose }) {
   const dispatch = useDispatch();
   const history = useHistory();
+  const axios = require('axios');
 
   /* Declare state variables so that DOM can be rerendered */
   const surveyResponses = useSelector((store) => store.surveyResponses);

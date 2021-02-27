@@ -1,4 +1,4 @@
-function SubmissionConfirmation() {
+function SubmissionConfirmation({ verbose }) {
   return <h2>Submission Confirmation</h2>;
 }
 

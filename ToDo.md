@@ -40,9 +40,9 @@
 - [x] Create routes for each page of the form
 - [ ] Review Component
   - [x] collects all data for review
-  - [ ] `<button>Submit</button>`
-    - [ ] submits feedback
-    - [ ] saves data to db
+  - [x] `<button>Submit</button>`
+    - [x] submits feedback
+    - [x] saves data to db
     - [ ] submission success page
       - [ ] button to restart process
         - [x] resets all the data
