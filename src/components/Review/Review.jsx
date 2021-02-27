@@ -2,6 +2,9 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
+/* Import CSS */
+import './Review.css';
+
 /**
  * Function allows the survey taker to review their answers before
  * storing their responses in the surveyResponses reducer in the Redux store
@@ -61,30 +64,45 @@ function Review({ verbose }) {
             <tr>
               <th>Question</th>
               <th>Response</th>
+              <th></th>
             </tr>
           </thead>
           {/* Response Answers for Review */}
           <tbody>
             <tr>
-              <td>Feeling:</td>
-              <td>{surveyResponses.feelingsScore}</td>
+              <td className="review-question">Feeling:</td>
+              <td className="response">{surveyResponses.feelingsScore}</td>
+              <td>
+                <button>Edit</button>
+              </td>
             </tr>
             <tr>
-              <td>Understanding:</td>
-              <td>{surveyResponses.understandingScore}</td>
+              <td className="review-question">Understanding:</td>
+              <td className="response">{surveyResponses.understandingScore}</td>
+              <td>
+                <button>Edit</button>
+              </td>
             </tr>
             <tr>
-              <td>Supported:</td>
-              <td>{surveyResponses.supportedScore}</td>
+              <td className="review-question">Supported:</td>
+              <td className="response">{surveyResponses.supportedScore}</td>
+              <td>
+                <button>Edit</button>
+              </td>
             </tr>
             <tr>
-              <td>Comments:</td>
-              <td>{surveyResponses.comments}</td>
+              <td className="review-question">Comments:</td>
+              <td className="response">{surveyResponses.comments}</td>
+              <td>
+                <button>Edit</button>
+              </td>
             </tr>
           </tbody>
         </table>
       </div>
-      <button onClick={submitSurvey}>SUBMIT</button>
+      <div>
+        <button onClick={submitSurvey}>SUBMIT</button>
+      </div>
     </div>
   );
 }

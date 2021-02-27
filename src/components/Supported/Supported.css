@@ -1,9 +1,10 @@
 .question {
   display: inline-block;
   width: 50%;
-  height: 300px;
+  /* height: 300px; */
   border: 1px solid #bec2cb;
   border-radius: 15px;
+  padding: 50px;
 }
 
 form {
