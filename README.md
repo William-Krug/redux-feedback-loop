@@ -15,17 +15,13 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
 ![TOP_LANGUAGE](https://img.shields.io/github/languages/top/William-Krug/redux-feedback-loop.svg?style=flat-square)
 ![FORKS](https://img.shields.io/github/forks/William-Krug/redux-feedback-loop.svg?style=social)
 
-# PROJECT NAME
+# Feedback Loop
 
 ## Description
 
-_Duration: 2 Week Sprint_
+_Duration: 1 Weekend Sprint_
 
 Directly above this is how long it took you to develop the project. Your project description goes here. What problem did you solve? How did you solve it?
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam at massa in faucibus. Etiam volutpat, risus non mollis convallis, velit nisi pulvinar mi, eu faucibus orci nisi eget nibh. Integer a velit pretium, volutpat arcu eleifend, fringilla elit. Cras erat sapien, convallis venenatis tellus vitae, feugiat dictum felis.
-
-Suspendisse euismod volutpat aliquet. Maecenas vulputate mauris in pellentesque facilisis. Phasellus varius malesuada semper. Cras sollicitudin diam mollis maximus aliquam.
 
 To see the fully functional site, please visit: [DEPLOYED VERSION OF APP](www.heroku.com)
 

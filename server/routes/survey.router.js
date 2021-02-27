@@ -37,10 +37,12 @@ router.post('/', (req, res) => {
   pool
     .query(sqlText, queryArguments)
     .then((dbResponse) => {
-      console.log('*** pool POST success for /feedback ***');
+      // Breadcrumbs for testing and debugging
+      console.log('*** pool POST success for /feedback');
       res.sendStatus(201);
     })
     .catch((error) => {
+      // Breadcrumbs for testing and debugging
       console.log(`*** Error making database query ${sqlText}:`, error);
       res.sendStatus(500);
     });

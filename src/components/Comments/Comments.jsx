@@ -17,7 +17,8 @@ function Comments({ verbose }) {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  /* Declare state variables */
+  /* Declare state variables
+     so that DOM updates/renders as user takes survey */
   const [comments, setComments] = useState('');
 
   /* Helper functions */

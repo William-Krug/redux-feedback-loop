@@ -47,6 +47,7 @@
       - [x] button to restart process
         - [x] resets all the data
         - [x] navigates back to first page of survey
+- [ ] README
 
 ## Stretch Goals
 
