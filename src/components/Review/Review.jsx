@@ -1,9 +1,13 @@
 /* Import Libraries */
 import { useSelector, useDispatch } from 'react-redux';
 import { axios } from 'react';
+import { useHistory } from 'react-router-dom';
 
 function Review({ verbose }) {
   const dispatch = useDispatch();
+  const history = useHistory();
+
+  /* Declare state variables so that DOM can be rerendered */
   const surveyResponses = useSelector((store) => store.surveyResponses);
 
   const submitSurvey = () => {
@@ -18,6 +22,7 @@ function Review({ verbose }) {
       .then((response) => {
         console.log('AXIOS POST response for /feedback:', response);
         clearSurveyResponses();
+        history.push('/submissionConfirmation');
       })
       .catch((error) => {
         alert('Error with request. Please try again later.');
@@ -25,8 +30,8 @@ function Review({ verbose }) {
       });
   };
 
-  // Clear all survey responses from Redux store
-  // so that fresh/new responses can be added by next user
+  /* Clear all survey responses from Redux store */
+  /* so that fresh/new responses can be added by next user */
   const clearSurveyResponses = () => {
     dispatch({
       type: 'CLEAR_SURVEY_RESPONSES',
