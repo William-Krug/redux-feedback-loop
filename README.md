@@ -1,15 +1,3 @@
-# Project Name
-
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
-
-## Description
-
-Your project description goes here. What problem did you solve? How did you solve it?
-
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
-
-(View Raw will give you the markdown that you can copy to your repos!)
-
 ![MIT LICENSE](https://img.shields.io/github/license/William-Krug/redux-feedback-loop.svg?style=flat-square)
 ![REPO SIZE](https://img.shields.io/github/repo-size/William-Krug/redux-feedback-loop.svg?style=flat-square)
 ![TOP_LANGUAGE](https://img.shields.io/github/languages/top/William-Krug/redux-feedback-loop.svg?style=flat-square)
@@ -21,7 +9,7 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
 
 _Duration: 1 Weekend Sprint_
 
-Directly above this is how long it took you to develop the project. Your project description goes here. What problem did you solve? How did you solve it?
+This app was designed to implement a feedback survey for students. Questions about how a student is feeling, their understanding of content and how well they feel supported are mandatory questions. Students have the option to leave any comments if they so choose. Before submitting their responses, students have the chance to review their answers and change them if needed.
 
 To see the fully functional site, please visit: [DEPLOYED VERSION OF APP](www.heroku.com)
 
@@ -31,19 +19,17 @@ Include one or two screen shots of your project here (optional). Remove if unuse
 
 ### Prerequisites
 
-Link to software that is required to install the app (e.g. node).
-
 - [Node.js](https://nodejs.org/en/)
-- List other prerequisites here
+- [Express.js](https://expressjs.com/)
+- [React](https://reactjs.org/)
+- [Redux](https://redux.js.org/)
+- [PostgreSQL](https://www.postgresql.org)
+- [Postico](https://eggerapps.at/postico/)
 
 ## Installation
 
-How do you get your application up and running? This is a step by step list for how another developer could get this project up and running. The good target audience in terms of knowledge, would be a fellow Primer from another cohort being able to spin up this project. Note that you do not need a paragraph here to intro Installation. It should be step-by-step.
-
-If your application has secret keys (for example -- Twilio), make sure you tell them how to set that up, both in getting the key and then what to call it in the `.env` file.
-
-1. Create a database named `your database name`,
-2. The queries in the `tables.sql` file are set up to create all the necessary tables and populate the needed data to allow the application to run correctly. The project is built on [Postgres](https://www.postgresql.org/download/), so you will need to make sure to have that installed. We recommend using Postico to run those queries as that was used to create the queries,
+1. Create a database named `prime_feedback`,
+2. The queries in the `data.sql` file are set up to create all the necessary tables and populate the needed data to allow the application to run correctly. The project is built on [Postgres](https://www.postgresql.org/download/), so you will need to make sure to have that installed. We recommend using Postico to run those queries as that was used to create the queries,
 3. Open up your editor of choice and run an `npm install`
 4. Run `npm run server` in your terminal
 5. Run `npm run client` in your terminal
@@ -51,18 +37,25 @@ If your application has secret keys (for example -- Twilio), make sure you tell 
 
 ## Usage
 
-How does someone use this application? Tell a user story here.
-
-1. xxx
-2. xxx
-3. xxx
-4. xxx
-5. xxx
-6. xxx
+1. For the feedback questions that ask for a rating, users can type a number in the input field or use the arrows to select the appropriate response. Responses must be between 1 and 5 (inclusive).
+   (**NOTE:** These questions are mandatory to move onto the next page.)
+2. For the feedback question asking about comments, users can type or copy and paste their response in the input field.
+3. Click the **NEXT** button on the feedback question pages to move to the next question.
+4. At the end of the survey, users have the chance to review their answers. If they are correct, click the **SUBMIT** button to send the responses.
+5. Click the **Edit** button to update any responses before submitting feedback.
+6. Users are thanked for their participation and given the opportunity to start the feedback survey anew.
 
 ## Built With
 
-List technologies and frameworks here
+- HTML
+- CSS
+- JavaScript
+- Node
+- Express
+- React
+- Redux
+- PostgreSQL
+- Postico
 
 ## License
 
@@ -92,8 +85,8 @@ SOFTWARE.
 
 ## Acknowledgement
 
-Thanks to [Prime Digital Academy](www.primeacademy.io) who equipped and helped me to make this application a reality. (Thank your people)
+Thanks to [Prime Digital Academy](www.primeacademy.io) who equipped and helped me to make this application a reality.
 
 ## Support
 
-If you have suggestions or issues, please email me at [youremail@whatever.com](www.google.com)
+If you have suggestions or issues, please email me at [william.p.krug@gmail.com](william.p.krug@gmail.com)
