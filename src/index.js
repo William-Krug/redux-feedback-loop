@@ -35,6 +35,8 @@ const surveyResponses = (state = {}, action) => {
         ...state,
         comments: action.payload,
       };
+    case 'CLEAR_SURVEY_RESPONSES':
+      return {};
     default:
       return state;
   }

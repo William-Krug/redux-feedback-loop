@@ -1,8 +1,9 @@
 /* Import Libraries */
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { axios } from 'react';
 
 function Review({ verbose }) {
+  const dispatch = useDispatch();
   const surveyResponses = useSelector((store) => store.surveyResponses);
 
   const submitSurvey = () => {
@@ -10,7 +11,26 @@ function Review({ verbose }) {
       console.log('*** in submitSurvey() ***');
     }
 
-    axios.post();
+    // Ping the server to POST user's survey response
+    // to the database
+    axios
+      .post('/feedback', surveyResponses)
+      .then((response) => {
+        console.log('AXIOS POST response for /feedback:', response);
+        clearSurveyResponses();
+      })
+      .catch((error) => {
+        alert('Error with request. Please try again later.');
+        console.log('AXIOSPOST /feedback error:', error);
+      });
+  };
+
+  // Clear all survey responses from Redux store
+  // so that fresh/new responses can be added by next user
+  const clearSurveyResponses = () => {
+    dispatch({
+      type: 'CLEAR_SURVEY_RESPONSES',
+    });
   };
 
   return (
