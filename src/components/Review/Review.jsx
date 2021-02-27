@@ -1,19 +1,32 @@
 /* Import Libraries */
 import { useSelector } from 'react-redux';
+import { axios } from 'react';
 
 function Review({ verbose }) {
   const surveyResponses = useSelector((store) => store.surveyResponses);
+
+  const submitSurvey = () => {
+    if (verbose) {
+      console.log('*** in submitSurvey() ***');
+    }
+
+    axios.post();
+  };
+
   return (
     <div className="survey-review">
       <h2>Review Your Feedback</h2>
       <div className="response-table">
+        {/* Table used to review feedback before submission */}
         <table>
+          {/* Table Header */}
           <thead>
             <tr>
               <th>Question</th>
               <th>Response</th>
             </tr>
           </thead>
+          {/* Response Answers for Review */}
           <tbody>
             <tr>
               <td>Feeling:</td>
@@ -34,7 +47,7 @@ function Review({ verbose }) {
           </tbody>
         </table>
       </div>
-      <button>SUBMIT</button>
+      <button onClick={submitSurvey}>SUBMIT</button>
     </div>
   );
 }
