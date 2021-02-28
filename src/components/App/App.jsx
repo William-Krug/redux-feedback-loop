@@ -9,6 +9,7 @@ import Understanding from '../Understanding/Understanding';
 import Supported from '../Supported/Supported';
 import Comments from '../Comments/Comments';
 import Review from '../Review/Review';
+import EditResponse from '../Review/EditResponse';
 import SubmissionConfirmation from '../SubmissionConfirmation/SubmissionConfirmation';
 
 const verbose = true;
@@ -56,7 +57,10 @@ function App() {
         <Route exact path="/submissionConfirmation">
           <SubmissionConfirmation verbose={verbose} />
         </Route>
-        <Route></Route>
+        {/* Edit Response */}
+        <Route exact path="/editResponse">
+          <EditResponse verbose={verbose} />
+        </Route>
       </Router>
     </div>
   );

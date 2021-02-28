@@ -47,9 +47,21 @@ const surveyResponses = (state = {}, action) => {
   }
 };
 
+const editResponse = (state = '', action) => {
+  switch (action.type) {
+    case 'EDIT_RESPONSE':
+      return action.payload;
+    default:
+      return state;
+  }
+};
+
 /* Redux Store */
 const store = createStore(
-  combineReducers({ surveyResponses }),
+  combineReducers({
+    surveyResponses,
+    editResponse,
+  }),
   applyMiddleware(logger)
 );
 
