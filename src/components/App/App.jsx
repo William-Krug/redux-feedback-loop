@@ -57,6 +57,7 @@ function App() {
         <Route exact path="/submissionConfirmation">
           <SubmissionConfirmation verbose={verbose} />
         </Route>
+
         {/* Edit Response */}
         <Route exact path="/editResponse">
           <EditResponse verbose={verbose} />
