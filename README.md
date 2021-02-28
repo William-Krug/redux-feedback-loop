@@ -11,12 +11,6 @@ _Duration: 1 Weekend Sprint_
 
 This app was designed to implement a feedback survey for students. Questions about how a student is feeling, their understanding of content and how well they feel supported are mandatory questions. Students have the option to leave any comments if they so choose. Before submitting their responses, students have the chance to review their answers and change them if needed.
 
-To see the fully functional site, please visit: [DEPLOYED VERSION OF APP](www.heroku.com)
-
-## Screen Shot
-
-Include one or two screen shots of your project here (optional). Remove if unused.
-
 ### Prerequisites
 
 - [Node.js](https://nodejs.org/en/)
