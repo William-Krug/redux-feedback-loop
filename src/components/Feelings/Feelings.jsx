@@ -22,6 +22,10 @@ function Feelings({ verbose }) {
   const [feelings, setFeelings] = useState(0);
 
   /* Helper functions */
+
+  /* Function captures user input on question submission and sends
+     their response to the Redux store to be stored in the
+     surveyResponses component */
   const recordFeelings = (event) => {
     // Keep page from reloading
     event.preventDefault();
@@ -37,7 +41,7 @@ function Feelings({ verbose }) {
       console.log('\tfeelings:', feelings);
     }
 
-    // Save value in the Redux store
+    // Save value to the surveyResponses component in the Redux store in
     dispatch({
       type: 'ADD_FEELINGS',
       payload: feelings,

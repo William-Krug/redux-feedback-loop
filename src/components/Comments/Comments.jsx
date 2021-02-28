@@ -22,6 +22,10 @@ function Comments({ verbose }) {
   const [comments, setComments] = useState('');
 
   /* Helper functions */
+
+  /* Function captures user input on question submission and sends
+     their response to the Redux store to be stored in the
+     surveyResponses component */
   const recordComments = (event) => {
     // Keep page from reloading
     event.preventDefault();
@@ -32,7 +36,7 @@ function Comments({ verbose }) {
       console.log('\tcomments:', comments);
     }
 
-    // Save value in the Redux store
+    // Save value to the surveyResponses component in the Redux store in
     dispatch({
       type: 'ADD_COMMENTS',
       payload: comments,

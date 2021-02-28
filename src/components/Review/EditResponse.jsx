@@ -1,17 +1,69 @@
 /* Import Libraries */
+import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
+/**
+ * Function allows the user to update any previously answered
+ * questions (and stores their updated response in the
+ * surveyResponses reducer) before submitting their feedback
+ *
+ * @param {boolean} verbose if `true` console logs are displayed for testing and debugging
+ */
 function EditResponse({ verbose }) {
   const dispatch = useDispatch();
   const history = useHistory();
-  const axios = require('axios');
 
+  /* Declare state variables
+     so that DOM updates/renders as user takes survey */
   const editResponse = useSelector((store) => store.editResponse);
   const surveyResponses = useSelector((store) => store.surveyResponses);
+  const [updatedResponse, setUpdatedResponse] = useState(
+    surveyResponses[editResponse]
+  );
 
+  // Breadcrumbs for testing and debugging
+  if (verbose) {
+    console.log('*** in EditResponse Component ***');
+    console.log('\teditResponse:', editResponse);
+  }
+
+  /* Helper functions */
+
+  /* Function captures user input on form submission and sends their
+     response to the Redux store to be stored in the surveyResponses
+     component */
+  const updateAnswer = (event) => {
+    // Keep page from reloading
+    event.preventDefault();
+
+    // Breadcrumbs for testing and debugging
+    if (verbose) {
+      console.log('*** in updateAnswer() ***');
+      console.log('\tupdatedResponse:', updatedResponse);
+    }
+
+    // Save updated value in the redux store
+    // `editResponse` becomes the key and `updatedResponse`
+    // becomes the value in the surveyResponses reducer
+    dispatch({
+      type: 'UPDATE_RESPONSE',
+      payload: {
+        property: editResponse,
+        value: updatedResponse,
+      },
+    });
+
+    // Navigate back to the responses review pages
+    history.push('/review');
+  };
+
+  /* Function renders the appropriate feedback question
+     base on the editResponse values associtaed with the 
+     button click on the review page */
   const rerenderQuestion = () => {
     switch (editResponse) {
+      // Feeling Question
       case 'feelingsScore':
         return (
           <div className="question">
@@ -28,8 +80,8 @@ function EditResponse({ verbose }) {
                 {/* User Response */}
                 <input
                   type="number"
-                  value={surveyResponses}
-                  onChange={(event) => setFeelings(event.target.value)}
+                  value={updatedResponse}
+                  onChange={(event) => setUpdatedResponse(event.target.value)}
                   min="1"
                   max="5"
                   required
@@ -39,6 +91,8 @@ function EditResponse({ verbose }) {
             </form>
           </div>
         );
+
+      // Understanding question
       case 'understandingScore':
         return (
           <div className="question">
@@ -55,8 +109,8 @@ function EditResponse({ verbose }) {
                 {/* User Response */}
                 <input
                   type="number"
-                  value={surveyResponses}
-                  onChange={(event) => setUnderstanding(event.target.value)}
+                  value={updatedResponse}
+                  onChange={(event) => setUpdatedResponse(event.target.value)}
                   min="1"
                   max="5"
                   required
@@ -66,12 +120,14 @@ function EditResponse({ verbose }) {
             </form>
           </div>
         );
+
+      // Supported question
       case 'supportedScore':
         return (
           <div className="question">
             {/* Survey Question */}
             <h2>How well are you being supported?</h2>
-            <form onSubmit={recordSupported}>
+            <form onSubmit={updateAnswer}>
               {/* Question Description */}
               <div className="left-align">
                 <p>Enter a number from 1 to 5</p>
@@ -82,8 +138,8 @@ function EditResponse({ verbose }) {
                 {/* User Response */}
                 <input
                   type="number"
-                  value={surveyResponses}
-                  onChange={(event) => setSupported(event.target.value)}
+                  value={updatedResponse}
+                  onChange={(event) => setUpdatedResponse(event.target.value)}
                   min="1"
                   max="5"
                   required
@@ -93,12 +149,14 @@ function EditResponse({ verbose }) {
             </form>
           </div>
         );
+
+      // Comments question
       case 'comments':
         return (
           <div className="question">
             {/* Survey Question */}
             <h2>Any comments you want to leave?</h2>
-            <form onSubmit={recordComments}>
+            <form onSubmit={updateAnswer}>
               <div className="left-align">
                 <p>Comments</p>
               </div>
@@ -106,8 +164,8 @@ function EditResponse({ verbose }) {
                 {/* User Response */}
                 <input
                   type="text"
-                  value={surveyResponses}
-                  onChange={(event) => setComments(event.target.value)}
+                  value={updatedResponse}
+                  onChange={(event) => setUpdatedResponse(event.target.value)}
                 />
                 <button type="submit">NEXT</button>
               </div>
@@ -117,23 +175,10 @@ function EditResponse({ verbose }) {
     }
   };
 
-  const updateAnswer = () => {
-    if (verbose) {
-      console.log('*** in updateAnswer() ***');
-    }
-
-    history.push('/review');
-  };
-
-  if (verbose) {
-    console.log('*** in EditResponse Component ***');
-    console.log('\teditResponse:', editResponse);
-  }
-
   return (
     <div>
       <h2>Edit Response</h2>
-      {rerenderQuestion}
+      {rerenderQuestion()}
     </div>
   );
 }

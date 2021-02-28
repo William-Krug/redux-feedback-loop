@@ -11,12 +11,13 @@ import App from './components/App/App';
 import registerServiceWorker from './registerServiceWorker';
 
 /* Reducers */
+
 /**
  * Reducer collects survey responses as attributes in an object
  * so that all responses are collectively held per survey taker
  *
  * @param {object} state the variable stored in the Redux store
- * @param {*} action tells the function what to do and what data to add to the state
+ * @param {object} action tells the function what to do and what data to add to the state
  */
 const surveyResponses = (state = {}, action) => {
   switch (action.type) {
@@ -42,11 +43,24 @@ const surveyResponses = (state = {}, action) => {
       };
     case 'CLEAR_SURVEY_RESPONSES':
       return {};
+    case 'UPDATE_RESPONSE':
+      return {
+        ...state,
+        [action.payload.property]: action.payload.value,
+      };
     default:
       return state;
   }
 };
 
+/**
+ * Reducer collects the survey response to be reviewed so that the
+ * appropriate question and answer can be displayed on the <EditResponse>
+ * component
+ *
+ * @param {object} state the variable stored in the Redux store
+ * @param {object} action tells the function what to do and what data to add to the state
+ */
 const editResponse = (state = '', action) => {
   switch (action.type) {
     case 'EDIT_RESPONSE':

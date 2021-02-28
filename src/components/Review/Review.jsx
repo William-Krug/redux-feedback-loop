@@ -20,6 +20,8 @@ function Review({ verbose }) {
   const surveyResponses = useSelector((store) => store.surveyResponses);
 
   /* Helper Functions */
+
+  /* Function sends all survey responses (as an object) to the database */
   const submitSurvey = () => {
     // Breadcrumbs for testing and debugging
     if (verbose) {
@@ -53,6 +55,9 @@ function Review({ verbose }) {
     });
   };
 
+  /* Function allows the user to go back and edit a previous response.
+     Users are taken to another page for question review and brought
+     back to this review page after updating their answer. */
   const editResponse = () => {
     // Breadcrumbs for testing and debugging
     if (verbose) {
@@ -60,11 +65,15 @@ function Review({ verbose }) {
       console.log('\tevent.target.value:', event.target.value);
     }
 
+    // Store the question to be reviewed in the editResponse component
+    // in the Redux store
     dispatch({
       type: 'EDIT_RESPONSE',
       payload: event.target.value,
     });
 
+    // Navigate to the <EditResponse> component to review
+    // question and answer
     history.push('/editResponse');
   };
 
