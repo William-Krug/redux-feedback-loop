@@ -20,6 +20,8 @@ function Review({ verbose }) {
   const surveyResponses = useSelector((store) => store.surveyResponses);
 
   /* Helper Functions */
+
+  /* Function sends all survey responses (as an object) to the database */
   const submitSurvey = () => {
     // Breadcrumbs for testing and debugging
     if (verbose) {
@@ -53,6 +55,28 @@ function Review({ verbose }) {
     });
   };
 
+  /* Function allows the user to go back and edit a previous response.
+     Users are taken to another page for question review and brought
+     back to this review page after updating their answer. */
+  const editResponse = () => {
+    // Breadcrumbs for testing and debugging
+    if (verbose) {
+      console.log('*** in editResponse() ***');
+      console.log('\tevent.target.value:', event.target.value);
+    }
+
+    // Store the question to be reviewed in the editResponse component
+    // in the Redux store
+    dispatch({
+      type: 'EDIT_RESPONSE',
+      payload: event.target.value,
+    });
+
+    // Navigate to the <EditResponse> component to review
+    // question and answer
+    history.push('/editResponse');
+  };
+
   return (
     <div className="survey-review">
       <h2>Review Your Feedback</h2>
@@ -73,28 +97,36 @@ function Review({ verbose }) {
               <td className="review-question">Feeling:</td>
               <td className="response">{surveyResponses.feelingsScore}</td>
               <td>
-                <button>Edit</button>
+                <button value={'feelingsScore'} onClick={editResponse}>
+                  Edit
+                </button>
               </td>
             </tr>
             <tr>
               <td className="review-question">Understanding:</td>
               <td className="response">{surveyResponses.understandingScore}</td>
               <td>
-                <button>Edit</button>
+                <button value={'understandingScore'} onClick={editResponse}>
+                  Edit
+                </button>
               </td>
             </tr>
             <tr>
               <td className="review-question">Supported:</td>
               <td className="response">{surveyResponses.supportedScore}</td>
               <td>
-                <button>Edit</button>
+                <button value={'supportedScore'} onClick={editResponse}>
+                  Edit
+                </button>
               </td>
             </tr>
             <tr>
               <td className="review-question">Comments:</td>
               <td className="response">{surveyResponses.comments}</td>
               <td>
-                <button>Edit</button>
+                <button value={'comments'} onClick={editResponse}>
+                  Edit
+                </button>
               </td>
             </tr>
           </tbody>

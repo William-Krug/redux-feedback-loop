@@ -22,6 +22,10 @@ function Understanding({ verbose }) {
   const [understanding, setUnderstanding] = useState(0);
 
   /* Helper functions */
+
+  /* Function captures user input on question submission and sends
+     their response to the Redux store to be stored in the
+     surveyResponses component */
   const recordUnderstanding = (event) => {
     // Keep page from reloading
     event.preventDefault();
@@ -37,7 +41,7 @@ function Understanding({ verbose }) {
       console.log('\tunderstanding:', understanding);
     }
 
-    // Save value in the Redux store
+    // Save value to the surveyResponses component in the Redux store in
     dispatch({
       type: 'ADD_UNDERSTANDING',
       payload: understanding,

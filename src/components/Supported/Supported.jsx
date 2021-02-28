@@ -22,6 +22,10 @@ function Supported({ verbose }) {
   const [supported, setSupported] = useState(0);
 
   /* Helper functions */
+
+  /* Function captures user input on question submission and sends
+     their response to the Redux store to be stored in the
+     surveyResponses component */
   const recordSupported = (event) => {
     // Keep page from reloading
     event.preventDefault();
@@ -37,7 +41,7 @@ function Supported({ verbose }) {
       console.log('\tsupported:', supported);
     }
 
-    // Save value in the Redux store
+    // Save value to the surveyResponses component in the Redux store in
     dispatch({
       type: 'ADD_SUPPORTED',
       payload: supported,
